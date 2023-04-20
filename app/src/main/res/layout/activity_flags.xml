@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/whichIs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/flags"
+            android:layout_alignStart="@+id/flags"
+            android:layout_alignEnd="@+id/flags"
+            android:fontFamily="@font/dancing_script_bold"
+            android:text="Какая это страна?"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/flags"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/flags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/cBtn1"
+            android:layout_alignStart="@+id/cBtn1"
+            android:layout_alignEnd="@+id/cBtn2"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/cBtn1"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/cBtn2"
+            android:layout_alignEnd="@+id/cBtn2"
+            android:layout_marginBottom="20dp"
+            android:onClick="onCBtnClick"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/cBtn2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/cBtn2"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/cBtn3"
+            android:layout_alignStart="@+id/cBtn3"
+            android:layout_marginBottom="20dp"
+            android:onClick="onCBtnClick"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flags" />
+
+        <Button
+            android:id="@+id/cBtn3"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:onClick="onCBtnClick"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="@+id/cBtn2"
+            app:layout_constraintStart_toStartOf="@+id/cBtn2"
+            app:layout_constraintTop_toBottomOf="@+id/cBtn2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/blackView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/my_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/rounded_top_corner"
+        app:layout_constraintHorizontal_bias="1.0">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="top"
+            android:text="Ваш результат находиться в топ 10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.32999998" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="top"
+            android:text="Поздравляем!"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:selectAllOnFocus="false"
+                android:text="Отмена"
+                android:textAllCaps="false"
+                android:textColor="@android:color/darker_gray" />
+
+            <Button
+                android:id="@+id/enterBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:text="Продолжить"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
